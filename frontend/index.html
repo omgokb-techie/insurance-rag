@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insurance Data Table</title>
+</head>
+<body>
+  <h2>Insurance Info</h2>
+  <table border="1" id="dataTable">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Service</th>
+        <th>Product</th>
+        <th>Coverage</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    fetch('http://localhost:3000/api/insurance')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector('#dataTable tbody');
+        data.forEach(item => {
+          const row = `<tr>
+            <td>${item.InsuranceType}</td>
+            <td>${item.InsuranceService}</td>
+            <td>${item.InsuranceProductName}</td>
+            <td>${item.InsuranceCoverage}</td>
+            <td>${item.InsurancePrice}</td>
+          </tr>`;
+          tbody.innerHTML += row;
+        });
+      });
+  </script>
+</body>
+</html>
