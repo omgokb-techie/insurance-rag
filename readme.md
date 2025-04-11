@@ -86,7 +86,7 @@ node chunk_embed.js
 node server.js
 ```
 
-7. **Run the frontend** to display the processed data in a table format:
+5. **Run the frontend** to display the processed data in a table format:
 
 Open `frontend/index.html` in a browser to view the extracted data in a simple HTML table.
 
